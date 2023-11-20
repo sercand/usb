@@ -129,9 +129,9 @@ func enumerateRawWithRef(vendorID uint16, productID uint16) ([]DeviceInfo, error
 					var reader, writer *uint8
 					for _, end := range ends {
 						// Skip any non-interrupt endpoints
-						if end.bmAttributes != C.LIBUSB_TRANSFER_TYPE_INTERRUPT {
-							continue
-						}
+						//if end.bmAttributes != C.LIBUSB_TRANSFER_TYPE_INTERRUPT {
+						//	continue
+						//}
 						if end.bEndpointAddress&C.LIBUSB_ENDPOINT_IN == C.LIBUSB_ENDPOINT_IN {
 							reader = new(uint8)
 							*reader = uint8(end.bEndpointAddress)
